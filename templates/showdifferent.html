@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <style type="text/css">
+        body {
+            /*background: url(../img/bg_main.jpeg)       no-repeat center center;*/
+            /*background: url(http://wx3.sinaimg.cn/mw690/0060lm7Tly1fw02ac65k3j30ri0gz3zl.jpeg)       no-repeat center center;*/
+
+            background-image: url("{{static_url('img/bg_main.jpeg')}}");
+
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #CCCCCC;
+        }
+
+        .loginstyle {
+            font-family: PingFangSC, sans-serif;
+            color: rgb(255, 255, 255);
+            font-style: normal;
+            letter-spacing: 0px;
+            line-height: 25px;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 18px;
+            width: 335px;
+            height: 47px;
+            background-color: #1AAD19;
+            border: none;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<div style="font-size: 30px; text-align: center;color: #3F51B5;font-weight: bold;height: 50px">
+
+    <img src="{{static_url('img/user.png')}}" width="50" height="50">
+
+    {{user}}
+    |
+    Result
+</div>
+
+
+<div style="margin-top: 100px">
+
+
+    <div style="float: left;background-color: white;width: 1200px;height: 600px; margin-left: 100px;margin-right: 20px;overflow:scroll">
+
+
+
+        {{ content }}
+
+        <!--<a style="background-color: #CCCCCC">dsafdsafdsafdsafsafdsa</a>-->
+
+    </div>
+
+
+    <div style="float: right; background-color: white;width: 335px;height: 600px; margin-right: 200px">
+
+
+        <div style="margin-top: 100px">
+            <span style="font-size: 28px;color: #000;display: block;text-align: center">report</span>
+            <span style="font-size: 28px;color: #000;display: block;text-align: center">-----------</span>
+            <span style="font-size: 28px;color: red;display: block;text-align: center">Similarity Proportion</span>
+            <span style="font-size: 28px;color: #000;display: block;text-align: center">-----------</span>
+
+            <div style="text-align: center">
+
+                <span style="font-size: 28px;color: red;text-align: center">%</span>
+                <span style="font-size: 58px;color: red;text-align: center">{{  similarity_degree }}</span>
+
+
+            </div>
+
+            <!--<span style="font-size: 28px;color: black;display: block;text-align: center">相似指数</span>-->
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div style="font-size: 30px; text-align: right;margin-right:200px; color: #3F51B5;font-weight: bold;margin-top: 250px;clear: both;">
+
+    <form action="/upfile" method="get" enctype="multipart/form-data">
+    <!--<input type="file" name="fileUpload"/>-->
+    <!--<input type="file" name="fileUpload"/>-->
+    <!--&lt;!&ndash;<input type="file" name="imgageUpload"/>&ndash;&gt;-->
+
+
+    <!--<select>-->
+    <!--<option value="Chinese">Chinese</option>-->
+    <!--<option value="English">English</option>-->
+    <!--</select>-->
+
+    <input class="loginstyle" type="submit" value="Submit other file"/>
+
+
+    </form>
+    <!--<a href="/upfile" class="loginstyle"> Submit other file</a>-->
+
+
+</div>
+
+
+</body>
+
+</html>

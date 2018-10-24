@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upfile</title>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{static_url('js/jquery-1.7.2.js')}}"></script>
+    <style type="text/css">
+        body {
+            /*background: url(../img/bg_main.jpeg)       no-repeat center center;*/
+            /*background: url(http://wx3.sinaimg.cn/mw690/0060lm7Tly1fw02ac65k3j30ri0gz3zl.jpeg)       no-repeat center center;*/
+
+            background-image: url("{{static_url('img/bg_main.jpeg')}}");
+
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #CCCCCC;
+        }
+
+        .loginstyle {
+            font-family: PingFangSC, sans-serif;
+            color: rgb(255, 255, 255);
+            font-style: normal;
+            letter-spacing: 0px;
+            line-height: 25px;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 18px;
+            width: 335px;
+            height: 47px;
+            background-color: #1AAD19;
+            border: none;
+        }
+    </style>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        window.onload=load;
+        function load(){
+            var c=$("#error").text();
+            if(c!=null&&c!=""){
+                alert($("#error").text());
+                $("#error").text('');
+            }
+            console.log("cuowuxingxi"+c);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+<div style="font-size: 30px; text-align: center;color: #3F51B5;font-weight: bold;line-height: 50px">
+
+    <img src="{{static_url('img/user.png')}}" width="50" height="50">
+
+    {{user}}
+    |
+    Submission
+</div>
+
+
+<div style="width: 800px;height: 600px; margin:0 auto;background-color: white;margin-top: 50px">
+
+    <img class="yyh-img" src=" " width="80" height="100" style="margin-top: 30px;margin-left: 30px;" >
+
+
+    <span id="file-name" style="margin-top: 20px;margin-left: 30px;display: block; width: 80px" >     </span>
+
+</div>
+
+<div style="font-size: 30px; text-align: center;color: #3F51B5;font-weight: bold;margin-top: 150px">
+
+     <div id="error" style="display: none">{{error}}</div>
+    <form action="/upfile" method="post" enctype="multipart/form-data">
+        <!--<input  class="yyh" type="file" name="fileUpload"  />-->
+        <!--<input type="file" name="fileUpload"/>-->
+        <!--<input type="file" name="imgageUpload"/>-->
+
+
+
+<input   class="yyh" type=file name="fileUpload" id=browsefile style="visibility: hidden;isibility:hidden" onchange=filepath.value=this.value>
+<!--<input type=textfield id=filepath>-->
+<input type=button id=filebutton value="Add submission" onclick="browsefile.click()">
+
+
+        <select name="language">
+            <option value="Chinese">Chinese</option>
+            <option value="English">English</option>
+        </select>
+
+        <input class="loginstyle" type="submit" value="Upfile"/>
+    </form>
+
+</div>
+
+
+
+
+<!--<script>-->
+<!--$(function(){-->
+	<!--setInterval(tupian, 1000);-->
+<!--})-->
+<!--function tupian(){-->
+<!--var fileFlag = false;-->
+<!--$("input[name='fileUpload']").each(function(){-->
+<!--if($(this).val()!="") {-->
+<!--fileFlag = true;-->
+<!--}-->
+<!--});-->
+<!--if(!fileFlag) {-->
+<!--$(".yyh-img").attr("src"," ");-->
+<!--}else{-->
+<!--$(".yyh-img").attr("src","{{static_url('img/report.jpg')}}")-->
+<!--}-->
+
+<!--var k = $(".yyh").val()-->
+<!--var y = k.split("\\")-->
+
+<!--$("#file-name").html(y[y.length-1]);-->
+
+<!--}-->
+<!--</script>-->
+
+
+<script>
+$(function(){
+	$(".yyh").change(function(){
+		if($(this).val() == ''){
+			$(".yyh-img").attr("src"," ");
+			$("#file-name").text("")
+		}else if ($(this).val() != ''){
+			$(".yyh-img").attr("src","{{static_url('img/report.jpg')}}")
+			var k = $(".yyh").val()
+			var y = k.split("\\")
+			$("#file-name").html(y[y.length-1]);
+		}
+	})
+})
+</script>
+
+
+</body>
+
+</html>

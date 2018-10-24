@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>login</title>
+	<script type="text/javascript" src="{{static_url('js/jquery-1.7.2.js')}}"></script>
+    <style type="text/css">
+        body {
+            /*background: url(../img/bg_main.jpeg)       no-repeat center center;*/
+            /*background: url(http://wx3.sinaimg.cn/mw690/0060lm7Tly1fw02ac65k3j30ri0gz3zl.jpeg)       no-repeat center center;*/
+
+             background-image: url("{{static_url('img/bg_main.jpeg')}}");
+
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #CCCCCC;
+        }
+
+        .loginstyle {
+            font-family: PingFangSC, sans-serif;
+            color: rgb(255, 255, 255);
+            font-style: normal;
+            letter-spacing: 0px;
+            line-height: 25px;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 18px;
+            width: 335px;
+            height: 47px;
+            background-color: #1AAD19;
+            border: none;
+        }
+
+        .tipsstyle {
+            font-family: FZHanZhenGuangBiao, sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: rgb(16, 16, 16);
+            font-style: normal;
+            letter-spacing: 0px;
+            line-height: 21px;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        window.onload=load;
+        function load(){
+            var c=$("#error").text();
+            if(c!=null&&c!=""){
+                alert($("#error").text());
+            }
+            console.log("cuowuxingxi"+c);
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<!--<div>-->
+<!--<a style="text-align: center;size: 60px;color: #CCCCCC">-->
+<!--Please login when you use our TOOI-->
+<!--</a>-->
+<!--</div>-->
+<div style="font-size: 38px; text-align:center;color: #3F51B5;font-weight: bold;margin-top: 80px">Please login when you
+    use our Tool
+</div>
+
+
+<div style="font-size: 30px; text-align:center;color: #3F51B5;font-weight: bold;margin-top: 35px">
+
+    
+    <img src="{{ static_url('img/user.png')  }}" width="100" height="100">
+
+
+</div>
+<div style="font-size: 30px; text-align:center;color: #000000;font-weight: bold;margin-top: 35px">
+<div id="error" style="display: none">{{error}}</div>
+    <form action="/login" method="post" >
+    <!--<form action="" method="">-->
+        <!--Email<input style="width: 198px; height: 28px;border:none; " type="text" name="email"><br><br>-->
+        <!--Password<input style="width: 198px; height: 28px;border:none; " type="text" name="password"><br><br>-->
+        <p><span style="display:inline-block;vertical-align:middle; height: 28px; width: 210px;">Username</span> <input style="width: 198px; height: 28px;border:none; " type="text" name="user" class="user"><br><br></p>
+        <p><span style="display:inline-block;vertical-align:middle; height: 28px; width: 210px;">Password</span> <input style="width: 198px; height: 28px;border:none; " type="text" name="password" class="password"><br><br></p>
+
+        <input class="loginstyle" type="submit" value="login ">
+    </form>
+    <!--<iframe name='hidden_frame' id="hidden_frame" style='display: none'></iframe>-->
+</div>
+
+
+<!--<form id="importBookForm" action="uploadReadBook.action" encType="multipart/form-data" method="post" target="hidden_frame">-->
+<!--<input id="myFile" name="myFile" type="File" /></a>-->
+<!--<input id="submit" class="btn" type="submit" value="导入资源">-->
+<!--</form>-->
+<!--<iframe name='hidden_frame' id="hidden_frame" style='display: none'></iframe>-->
+
+
+
+<div style="font-size: 18px; text-align:center;color: #3F51B5;font-weight: bold;display: block;margin-top: 30px">
+   Do you have a account?Please<a href="/register">Register</a>
+</div>
+<div style="font-size: 18px; text-align:center;color: #3F51B5;font-weight: bold;display: inline;">
+   <!--<a href="register.html">Register</a>-->
+
+
+</div>
+
+</body>
+</html>

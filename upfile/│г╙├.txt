@@ -1,0 +1,492 @@
+广州:
+63684083
+
+
+965721456
+
+IDyoga:
+18665401024
+
+123456
+
+moven helper 找出依赖冲突的包
+FindBugs     找出依赖BUG代码	
+
+
+Intent mIntent = new Intent();
+// 设置结果，并进行传送
+this.setResult(resultCode, mIntent);
+// this.finish();
+
+
+//EventBus 发送
+
+ EventBus.getDefault().post(new PostResult("address",shopId));
+
+//EventBus 接收
+
+ @Override
+    public void onEvent(PostResult postResult) {
+        super.onEvent(postResult);
+        if (postResult.getTag().equals("address")) {
+            Logcat.i("shopId" + postResult.getResult());
+            String shopId = postResult.getResult() + "";
+        }
+    }
+
+
+*首页顶部应该显示当前店铺名称 #
+
+*团课课表剩余名额不会变化 #API 给的是可预约名额
+
+*切换店铺后，课程表和“我的”页面顶部的信息没有自动同步
+课程详情页面，预约会员列表没有显示会员姓名 #
+课程详情的“学院|预约”的预约数据不正确，取消预约之后，这个数据不会减少 #
+课程详情取消预约后，已取消括号里的数字虽然变化了，但是已取消列表没有更新#
+课程详情已签到，已取消的时间要标明一下是什么时间#
+修改课程表app闪退...
+
+
+{limitCencelTime=0, number=33, tutorList=["105"], experienceRuleId=, startTime=12:51, classroomId=94, shopId=19287727, parentShopId=, isPay=2, price=22, limitNumber=0, experienceNumber=, appointmentLimitTime=1440, usePoints=, lessonId=2131, startDate=[2018-05-11], tagList=["1393"], cancelUseTime=1440, isExperience=0}
+
+
+RequestBody requestBody = new FormBody.Builder()
+                .add("head", base64)
+                .build();
+        OkhttpRequestUtil.post(ConstanUrl.UPLOAD_USER_HEAD, requestBody, 1, uiHandler, true);
+
+
+        OkhttpRequestUtil.get(ConstanUrl.GET_BANK_INFO, 2, true, uiHandler);
+
+
+ @Override
+    protected void networkResponse(Message msg) {
+        super.networkResponse(msg);
+
+
+        switch (msg.what) {
+            case 1:
+                String str1 = msg.obj + "";
+                if (!b) {
+                    if (!str1.isEmpty()) {
+                        RealVerifyBean r = j.getRealVerifyInfo(str1);
+                        etName.setText(r.getTruename()+"(不可修改)");
+                        Log.d("getTruename", "getTruename: "+r.getTruename());
+                    }
+                }
+                break;
+
+
+login_et_username
+
+actvity 
+View view = View.inflate(this, R.layout.activity_login, null);
+        ButterKnife.bind(this, view);
+        flContains.addView(view);
+        this.ivBaseBack.setVisibility(View.INVISIBLE);
+        this.rlBaseAction.setVisibility(View.GONE);
+        tilPw.setPasswordVisibilityToggleEnabled(true);
+
+{"code":"0","msg":"课程开始时间不能小于当前时间","time":"1526458178","data":[]}
+
+自定义view https://upload-images.jianshu.io/upload_images/944365-cf72b2ef1fac691a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/501
+
+
+
+
+appointmentCourseDetailsAdapter =new AppointmentCourseDetailsAdapter(R.layout.item_appointment_course_details,data,type);
+        recycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recycleView.setAdapter(appointmentCourseDetailsAdapter);
+
+
+Glide.with(mContext).load(item.getImage()).transform(new GlideRoundTransform(mContext, 5)).into((ImageView) helper.getView(R.id.iv));
+
+Glide.with(this).load(bean.getLessonImg()).crossFade().placeholder(R.drawable.default_heardimg).transform(new GlideRoundTransform(this, 5)).into(iv);
+
+//圆形
+Glide.with(mContext).load(item.getHeadpicUrl()).transform(new GlideCircleTransform(mContext)).into((ImageView) helper.getView(R.id.iv_head));
+
+//比例缩放显示
+Glide.with(mContext).
+                        load(contextMenuItemBean.getData().getLessonImg()).crossFade()
+                        .placeholder(R.drawable.default_heardimg)
+                        .transform(new GlideRoundTransform(mContext, 5))
+
+//                        .into((ImageView) holder.getView(R.id.iv));
+
+                        .into(new SimpleTarget<GlideDrawable>() {
+                                  @Override
+                                  public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                                      iv.setImageDrawable(resource);
+                                  }
+                              });
+
+implements IPickerViewData 
+
+
+yyyy-MM-dd HH:mm:ss
+
+
+
+SwipeBackHelper.getCurrentPage(this)//获取当前页面
+                .setSwipeBackEnable(false);//设置是否可滑动
+
+android:singleLine="true"
+android:ellipsize="end"
+android:ellipsize="marquee"–以跑马灯的方式显示(动画横向移动)
+
+
+android:ellipsize="end"
+android:maxEms="8"
+android:singleLine="true"
+
+
+<com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/recycleView">
+
+</com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+
+  if (!ListUtil.isEmpty(teacherBean.getData().getList())) {
+                dataBeen = teacherBean.getData().getList();
+            }
+
+
+
+  /**
+     * 动态添加 规则view
+     *
+     * @param ruleBeanList
+     */
+    private void initRadioGroup(List<CourseAddTeamCourseBean.ExperienceRuleBean> ruleBeanList) {
+        for (int i = 0; i < ruleBeanList.size(); i++) {
+            RadioButton tempButton = new RadioButton(this);
+            tempButton.setButtonDrawable(R.drawable.selector_check_bg);           // 设置按钮的样式
+            tempButton.setPadding(DensityUtil.dp2px(this, 5), 0, 0, 0);                 // 设置文字距离按钮四周的距离
+            tempButton.setText(ruleBeanList.get(i).getName());
+            tempButton.setId(i + 1);
+
+            group.addView(tempButton, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams mLayoutParams = (LinearLayout.LayoutParams) tempButton.getLayoutParams();
+            mLayoutParams.setMargins(DensityUtil.dp2px(this, 10), 0, 0, 10);
+            tempButton.setLayoutParams(mLayoutParams);
+        }
+    }
+
+//浏览器显示
+
+/        mWebSettings = mWebview.getSettings();
+//        mWebview.loadUrl(bean.getData().getUrl());
+//        //设置不用系统浏览器打开,直接显示在当前Webview
+//        mWebview.setWebViewClient(new WebViewClient() {
+//            @Override
+//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//                view.loadUrl(url);
+//                return true;
+//            }
+//        });
+//
+//        //设置WebChromeClient类
+//        mWebview.setWebChromeClient(new WebChromeClient() {
+//            //获取网站标题
+//            @Override
+//            public void onReceivedTitle(WebView view, String title) {
+//                System.out.println("标题在这里");
+//            }
+//
+//            //获取加载进度
+//            @Override
+//            public void onProgressChanged(WebView view, int newProgress) {
+//            }
+//        });
+//        //设置WebViewClient类
+//        mWebview.setWebViewClient(new WebViewClient() {
+//            //设置加载前的函数
+//            @Override
+//            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+//                System.out.println("开始加载了");
+//
+//            }
+//
+//            //设置结束加载函数
+//            @Override
+//            public void onPageFinished(WebView view, String url) {
+//
+//            }
+//        });
+
+
+//    //点击返回上一页面而不是退出浏览器
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && mWebview.canGoBack()) {
+//            mWebview.goBack();
+//            return true;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
+
+    //销毁Webview
+//    @Override
+//    protected void onDestroy() {
+//        if (mWebview != null) {
+//            mWebview.loadDataWithBaseURL(null, "", "text/html", "utf-8", null);
+//            mWebview.clearHistory();
+//            ((ViewGroup) mWebview.getParent()).removeView(mWebview);
+//            mWebview.destroy();
+//            mWebview = null;
+//        }
+//  、、pter);Destroy();
+//    }
+
+
+//初始化adapter
+public void initAdapter() {
+        membershipManagementAdapter = new MembershipManagementAdapter(R.layout.item_userlist, null);
+        LinearLayoutManager mManager = new LinearLayoutManager(this);
+        recyclerview.setLayoutManager(mManager);
+        recyclerview.addItemDecoration(mDecoration = new SuspensionDecoration(this, new ArrayList<ISuspensionInterface>()));
+        recyclerview.addItemDecoration(new DefaultItemDecoration(Color.parseColor("#f0f3f5")));
+        recyclerview.setAdapter(membershipManagementAdapter);
+
+        mIndexBar.setmPressedShowTextView(null)
+                .setNeedRealIndex(true)
+                .setmLayoutManager(mManager);
+        mIndexBar.setVisibility(View.INVISIBLE);
+        membershipManagementAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Intent intent = new Intent(SearchMembershipActivity.this, UserActivity.class);
+                intent.putExtra("userId", membershipManagementAdapter.getData().get(position).getUser_id() + "");
+                intent.putExtra("shopId", membershipManagementAdapter.getData().get(position).getShop_id() + "");
+                startActivityForResult(intent, 1);
+//                ToastUtil.showToast("" + position);
+            }
+        });
+    }
+
+
+
+
+//activity 传参数
+ Intent i=new Intent(TeacherActivity.this, TeacherDetailsActivity.class);
+                i.putExtra("tutorId",tutorManagementAdapter.getData().get(position).getId()+"");
+                startActivityForResult(i,1);
+
+
+ /**
+     * 初始化输入框leftDrawable
+     */
+    public void initetsearchr() {
+        Drawable leftDrawable = etSearch.getCompoundDrawables()[0];
+        if (leftDrawable != null) {
+            leftDrawable.setBounds(0, 0, 80, 80);
+            etSearch.setCompoundDrawables(leftDrawable, etSearch.getCompoundDrawables()[1], etSearch.getCompoundDrawables()[2], etSearch.getCompoundDrawables()[3]);
+        }
+    }
+
+
+//recyclerView 下滑监听
+recycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if(newState == RecyclerView.SCROLL_STATE_IDLE){
+                    int lastVisiblePosition = linearLayoutManager.findLastVisibleItemPosition();
+                    if(lastVisiblePosition >= linearLayoutManager.getItemCount() - 1){
+                        if (hasMore) {
+                            ++currPageIndex;
+                            Log.d(TAG, "onScrollStateChanged1111: " + currPageIndex);
+                            getData(currPageIndex);
+                        } else {
+                            Toast.makeText(mActivity, "没有更多数据了!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }
+            }
+        });
+
+//自定义tabview xml
+   <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/tab_view"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="#ffffff"
+                app:tl_indicator_corner_radius="1.5dp"
+                app:tl_indicator_height="3dp"
+                app:tl_indicator_width="15dp"
+                app:tl_tab_space_equal="true"
+                app:tl_indicator_color="@color/red"
+                app:tl_textSelectColor="@color/red"
+                app:tl_textUnselectColor="@color/text_color"
+                />
+
+ tabLayout.setViewPager(mVpView);
+
+//popview 弹出后变黑
+   private void setBackgroundAlpha(float from, float to, int duration) {
+        final Activity activity = (Activity) this;
+        final WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+        ValueAnimator animator = ValueAnimator.ofFloat(from, to);
+        animator.setDuration(duration);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                lp.alpha = (float) animation.getAnimatedValue();
+                activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                activity.getWindow().setAttributes(lp);
+            }
+        });
+        animator.start();
+    }
+
+setBackgroundAlpha(1f,  0.5f, 240); //变黑
+setBackgroundAlpha(1f,  0.5f, 240); //恢复
+
+     RxView.clicks(tvChooseMainstream)
+                .throttleFirst(3,TimeUnit.SECONDS)
+                .subscribe(new Consumer<Object>() {
+                    @Override
+                    public void accept(Object o) throws Exception {
+                        Toast.makeText(AddTeacherActivity.this, "请稍后再试!", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+ INSERT INTO user
+          (host, user, authentication_string
+           select_priv, insert_priv, update_priv)
+           VALUES ('localhost', 'domain',
+           PASSWORD('domain123'), 'Y', 'Y', 'Y');
+
+ //设置drawable 大小
+    public void initdrawable() {
+        Drawable rightDrawable = mTvPca.getCompoundDrawables()[2];
+        if (rightDrawable != null) {
+            rightDrawable.setBounds(0, 0, ConvertUtils.dp2px(10), ConvertUtils.dp2px(10));
+            mTvPca.setCompoundDrawables(mTvPca.getCompoundDrawables()[1], mTvPca.getCompoundDrawables()[1], rightDrawable, mTvPca.getCompoundDrawables()[3]);
+        }
+    }
+
+
+  /**
+     * 时间选择器
+     */
+    private void showTimePicker() {
+        Calendar calendar = Calendar.getInstance();
+        Calendar selectedDate = Calendar.getInstance();
+        final Calendar startDate = Calendar.getInstance();
+        Calendar endDate = Calendar.getInstance();
+        startDate.set(1900, 1, 1);
+        endDate.set(2100, 11, 31);
+        TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date, View v) {
+
+//                    tv_card_start_time.setText("" + TimeUtils.date2String(date,new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")));
+//                    startTime = (TimeUtils.date2Millis(date)/1000)+"";
+//
+                Logcat.i("选择的日期：" + date + "/" + DateUtils.getTime(date));
+
+                if (TimeUtils.date2Millis(date) > TimeUtils.getNowMills()) {
+                    ToastUtil.showToast("生日不能大于当前时间");
+                } else {
+                    birthday = TimeUtils.date2String(date, new SimpleDateFormat("yyyyMMdd"));
+                    tvBirthday.setText(TimeUtils.date2String(date, new SimpleDateFormat("yyyy-MM-dd")));
+                }
+            }
+        }).setDate(selectedDate)// 如果不设置的话，默认是系统时间*/
+                .setRangDate(startDate, endDate)//起始终止年月日设定.build();
+                .isDialog(true)
+                .setTitleText("时间选择")
+                .setType(new boolean[]{true, true, true, false, false, false})
+                .setBackgroundId(0x66000000) //设置外部遮罩颜色
+                .build();
+        pvTime.show();
+    }
+
+//下拉刷新
+
+//下拉刷新监听
+        refreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()));
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                LogUtils.i("refreshing...");
+                getdata();
+            }
+        });
+
+ refreshLayout.finishRefresh(false);//传入false表示刷新失败
+ 	
+
+
+String date = TimeUtils.getString(Globletime, posiionSpan * 7, TimeConstants.DAY);
+//时间格式
+ //yyyy-MM-dd HH:mm:ss
+
+tvTest.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
+tvTest.getPaint().setAntiAlias(true);//抗锯齿
+
+//5.0button去阴影
+style="?android:attr/borderlessButtonStyle"
+
+ android:ellipsize="end"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:singleLine="true"
+
+//设置空布局
+View notDataView =getActivity().getLayoutInflater().inflate(R.layout.layout_blank_data, (ViewGroup) recycleView.getParent(), false);
+  termAdapter.setEmptyView(notDataView);
+
+//dialog 点击外部和返回不消失
+mDialog.setCanceledOnTouchOutside(false);
+            mDialog.setCancelable(false);
+
+
+commit by domain
+time: 2018年8月13日18:03:08
+
+1.完成UI 第一个版本修正
+2.修复4.4版本以下启动失败
+3.修复更新时包大小显示不正确
+
+
+
+  /**
+     *时间选择器
+     */
+    private void showTimePicker() {
+        Calendar calendar = Calendar.getInstance();
+        Calendar selectedDate = Calendar.getInstance();
+        final Calendar startDate = Calendar.getInstance();
+        Calendar endDate = Calendar.getInstance();
+        startDate.set(1900, 1, 1);
+        endDate.set(2100, 11, 31);
+        TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
+            @Override
+            public void onTimeSelect(Date date, View v) {
+
+//                    tv_card_start_time.setText("" + TimeUtils.date2String(date,new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")));
+//                    startTime = (TimeUtils.date2Millis(date)/1000)+"";
+//
+                Logcat.i("选择的日期：" + date + "/" + DateUtils.getTime(date));
+
+                if (TimeUtils.date2Millis(date) > TimeUtils.getNowMills()) {
+                    ToastUtil.showToast("生日不能大于当前时间");
+                } else {
+                    birthday = TimeUtils.date2String(date, new SimpleDateFormat("yyyyMMdd"));
+                    tvBirthday.setText(TimeUtils.date2String(date, new SimpleDateFormat("yyyy-MM-dd")));
+                }
+            }
+        }).setDate(selectedDate)// 如果不设置的话，默认是系统时间*/
+                .setRangDate(startDate, endDate)//起始终止年月日设定.build();
+                .isDialog(true)
+                .setTitleText("时间选择")
+                .setType(new boolean[]{true, true, true, false, false, false})
+                .setBackgroundId(0x66000000) //设置外部遮罩颜色
+                .build();
+        pvTime.show();
+    }

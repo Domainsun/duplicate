@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--用static_url获取配置里面的static路径 然后拼接-->
+    <link rel="stylesheet" href="{{static_url('css/home.css')}}">
+
+</head>
+<body>
+
+for:
+<!--for-->
+{%for i in list%}
+    {{ i }}
+{% end %}
+<p></p>
+<!--if  -->
+if:
+{% if dic["name"]=="domain"  %}
+ my name is {{  dic["name"]}}
+{% end %}
+<p></p>
+<!--if elif-->
+if elif:
+{% if dic["name"]=="alex"  %}
+ my name is {{  dic["name"]}}
+{%   else %}
+ my name is other
+{% end %}
+<p></p>
+
+if and:
+{% if dic["name"]=="domain" and dic["age"]==18 %}
+ my name is {{  dic["name"]}},I am 18  years old
+{% end %}
+
+<p></p>
+
+static_url:
+<h1>this is a red h1 </h1>
+
+
+
+</body>
+</html>

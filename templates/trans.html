@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+默认转义:
+<br>
+{{ str1}}
+<br>
+关闭一行转义:<br>
+{% raw str1 %} <!--关闭这行转义-->
+
+关闭本页所有转义:
+{% autoescape None%}
+{{ str1}}
+
+<br>
+escape开启转义:
+<br>
+{{    escape(str1) }}}
+
+</body>
+</html>
